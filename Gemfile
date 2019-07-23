@@ -67,6 +67,8 @@ gem 'jquery-rails'
 
 gem 'popper_js'
 
+gem 'sass', '~> 3.7.4'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
