@@ -4,5 +4,13 @@ class CoursesController < ApplicationController
   end
   def each
     @each = each.new
-end
-end
+  end
+
+  def show
+    @course = Course.find(params[:id])
+  end
+  def title
+    @title = title.new
+  end
+  end
+
