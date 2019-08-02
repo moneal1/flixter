@@ -1,4 +1,5 @@
 class Course < ApplicationRecord
+  mount_uploader :image
   belongs_to :user
   has_many :sections
 
@@ -6,3 +7,6 @@ class Course < ApplicationRecord
   validates :description, presence: true
   validates :cost, presence: true, numericality: {greater_than_or_equal_to: 0}
 end
+
+
+
