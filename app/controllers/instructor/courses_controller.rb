@@ -5,7 +5,8 @@ class Instructor::CoursesController < ApplicationController
 
   def new
     @course = Course.new
-  end
+    
+  
 
   def create
     @course = current_user.courses.create(course_params)
@@ -18,6 +19,7 @@ class Instructor::CoursesController < ApplicationController
     end
   end
   def show
+    @image = Image.new
 
     
   end
