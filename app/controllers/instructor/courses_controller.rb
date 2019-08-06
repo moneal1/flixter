@@ -20,6 +20,7 @@ class Instructor::CoursesController < ApplicationController
   end
   def show
     @image = Image.new
+    @title = Title.new
 
     
   end
@@ -39,6 +40,7 @@ end
 
 def course_params
   params.require(:course).permit(:title, :description, :cost, :image)
+end
 end
 end
 
