@@ -20,9 +20,7 @@ class Instructor::CoursesController < ApplicationController
     end
   end
   def show
-    @image = Image.new
-    @title = Title.new
-
+  @course = Course.find(params[:id])
     
   end
 
