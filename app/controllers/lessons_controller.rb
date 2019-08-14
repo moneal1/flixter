@@ -5,20 +5,23 @@ class LessonsController < ApplicationController
   def show
   end
 
-  private
-
-
-  def require_authorized_for_current_section
-    if current_section.course.user != current_user
-    if !current_user.enrolled_in?(current_lesson.section.course), alert: 'You Are Not Enrolled', status: :unauthorized
-
-    end
-
   helper_method :current_lesson
   def current_lesson
     @current_lesson ||= Lesson.find(params[:id])
   end
+  
+  private
 
+
+  def require_authorized_for_current_section
+    if !current_user.enrolled_in?(current_lesson.section.course)
+
+    end
+  
+
+  
+
+end
 end
 
 
