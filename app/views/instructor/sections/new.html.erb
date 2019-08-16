@@ -1,5 +1,16 @@
+<script>
+  $(function() {
+    alert('hi');
+  });
+</script>
+
+
+
+
 <br />
+<% @section.lessons.rank(:row_order).each do |lesson| %>
 <div class="booyah-box col-10 offset-1">
+
   <h1>Add a new section</h1>
   <%= simple_form_for @section, url: instructor_course_sections_path(current_course) do |f| %>
     <%= f.input :title %>
@@ -7,5 +18,6 @@
     <%= f.submit "Add a section", class: 'btn btn-primary' %>
     <br />
     <br />
+  <% end %>
   <% end %>
 </div>
