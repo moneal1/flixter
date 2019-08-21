@@ -44,10 +44,12 @@ class Instructor::SectionsController < ApplicationController
   helper_method :current_course
   def current_course
     @current_course ||= Course.find(params[:course_id])
-  else
-    current_section.course
-    if @course.valid?
+  if @course.valid?
      redirect_to instructor_course_path(@course)
+  else
+    render :new, status: :unprocessable_entity
+    
+    
    end
   end
 
