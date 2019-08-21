@@ -5,9 +5,7 @@ class Instructor::SectionsController < ApplicationController
 
   def new
     @section = Section.new
-     @current_section ||= Section.find(params[:id])
-    
-  end
+    end
   
   def create
     @section = current_course.sections.create(section_params)
@@ -43,14 +41,11 @@ class Instructor::SectionsController < ApplicationController
 
   helper_method :current_course
   def current_course
+    if params[:course_id]
     @current_course ||= Course.find(params[:course_id])
-  if @course.valid?
-     redirect_to instructor_course_path(@course)
-  else
-    render :new, status: :unprocessable_entity
-    
-    
-   end
+    else
+      current_section.course
+    end
   end
 
    def section_params
