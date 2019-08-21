@@ -5,6 +5,7 @@ class Instructor::SectionsController < ApplicationController
 
   def new
     @section = Section.new
+     @current_section ||= Section.find(params[:id])
     
   end
   
@@ -18,6 +19,10 @@ class Instructor::SectionsController < ApplicationController
     render plain: 'updated!'
    end
 
+   def current_section
+    @current_section ||= Section.find(params[:id])
+  end
+
   private
 
   def require_authorized_for_current_section
@@ -26,9 +31,8 @@ class Instructor::SectionsController < ApplicationController
     end
   end
 
-  def current_section
-    @current_section ||= Section.find(params[:id])
   
+
 
   def require_authorized_for_current_course
     if current_course.user != current_user
@@ -51,4 +55,3 @@ end
   def section_params
     params.require(:section).permit(:title, :row_order_position)
  end 
-end
