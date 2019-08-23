@@ -1,5 +1,5 @@
 <script>
-  
+
   $(function() {
     $('.new-lesson-button').click(function( event ) {
       var lessonUrl = $( event.target).data('lesson-url');
@@ -37,7 +37,7 @@
   <h1 class="text-center"><%= current_course.title %></h1>
   <%= image_tag current_course.image.to_s, class: 'img-fluid' %>
   <br />
-  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
+  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right btn-lg' %>
   <br class="clr" />
   <div class="text-center">
   <!-- Button trigger modal -->
