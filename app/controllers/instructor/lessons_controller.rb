@@ -13,7 +13,7 @@ end
 def update
   current_lesson.update_attributes(lesson_params)
   render plain: 'updated!'
-  end
+end
 
 
 private
@@ -29,19 +29,20 @@ def require_authorized_for_current_section
       render plain: 'Unauthorized', status: :unauthorized
     end
   end
-def current_lesson
-  @current_lesson ||= Lesson.find(params[:id])
+    
+    def current_lesson
+     @current_lesson ||= Lesson.find(params[:id])
 end
 
-  
+    
 
-helper_method :current_section
-def current_section
+    helper_method :current_section
+      def current_section
   @current_section ||= Section.find(params[:section_id])
 end
 
-def lesson_params
-  params.require(:lesson).permit(:title, :subtitle, :video, :row_order_position)
-end
-end
+    def lesson_params
+      params.require(:lesson).permit(:title, :subtitle, :video, :row_order_position)
+    end
+  end
 end
