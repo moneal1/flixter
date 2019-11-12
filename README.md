@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Flixter
 
-Things you may want to cover:
+Flixter is a lesson within the Coding Bootcamp of Univertsity of Arizona. This lesson is designed to build a two sided video streaming marketplace, featuring credit card capabilities, user role management, complex user interfaces and advanced database relationships
 
-* Ruby version
+Installation
+You can run the app live from Heroku at https://flixter-mike-oneal.herokuapp.com/.
 
-* System dependencies
+Usage
+Navigate through different working web applications throught the website.
 
-* Configuration
+Students could look up a curriculum
+Teachers could create lessons for the students
+Videos are also implimented in the web page
 
-* Database creation
+Contributing
+Lesson provided by University of Arizona
+Please make sure to update tests as appropriate.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
